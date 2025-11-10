@@ -1,5 +1,5 @@
 
-![banner](images\banner.jpg)
+![banner](https://github.com/jpinosuarez/portfolio-data-analytics/blob/main/images/banner.jpg)
 
 # Data Analyst Portfolio
 
