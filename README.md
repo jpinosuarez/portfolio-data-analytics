@@ -1,3 +1,6 @@
+
+![banner](images\banner.jpg)
+
 # Data Analyst Portfolio
 
 Welcome to my portfolio! I'm Joaquín Pino Suárez, a data analyst passionate about transforming data into actionable insights and data-driven marketing strategies.
@@ -6,125 +9,135 @@ Welcome to my portfolio! I'm Joaquín Pino Suárez, a data analyst passionate ab
 
 Data Analyst and Market Research Specialist with a University degree in Market Analysis and Marketing Strategies from Universidad Siglo 21. Currently based in Berlin, Germany, combining expertise in data analysis, marketing, and business intelligence to drive strategic decision-making.
 
-With over 3 years of hands-on experience in data analysis and 9 years in administrative and project management roles, I specialize in turning complex data into clear, actionable insights that optimize business operations and marketing strategies.
+With hands-on experience gained through practical projects, training, and self-driven analysis work, and 9 years in administrative and project management roles, I specialize in turning complex data into clear, actionable insights that optimize business operations and marketing strategies.
+
+---
 
 ## 🛠️ Technical Skills
 
 **Data Analysis & Visualization:**
-- Excel (Office 365/Microsoft 365) - Advanced
-- Power BI - Dashboard creation, DAX, visualizations
-- Python (Pandas, NumPy, Matplotlib, Seaborn)
-- R Programming
-- Statistics for Data Analysis
+- Excel (Office 365/Microsoft 365) - Advanced  
+- Power BI - Dashboard creation, DAX, visualizations  
+- Python (Pandas, NumPy, Matplotlib)  
+- R Programming  
+- Statistics for Data Analysis  
 
 **Data Management:**
-- SQL
-- Data Cleaning & Manipulation
-- Big Data Principles
-- ETL Processes
+- SQL  
+- Data Cleaning & Manipulation  
+- Big Data Principles  
+- ETL Processes  
 
 **Marketing & Business Tools:**
-- Mailchimp
-- Marketing Analytics
-- Customer Behavior Analysis
-- A/B Testing
+- Mailchimp  
+- Marketing Analytics  
+- Customer Behavior Analysis  
+- A/B Testing  
 
 **Web Development:**
-- HTML, CSS, JavaScript
-- WordPress
+- HTML, CSS, JavaScript  
+- WordPress  
 
 **Design:**
-- Adobe Illustrator
+- Adobe Illustrator  
 
 **Methodologies:**
-- Storytelling & Data Visualization
-- Agile Methodologies
-- Market Research
+- Storytelling & Data Visualization  
+- Agile Methodologies  
+- Market Research  
+
+---
 
 ## 📊 Featured Projects
 
 ### 1. [Cyclistic Bike-Share Analysis: User Behavior & Marketing Strategy](./projects/cyclistic-bike-share-analysis/)
 Comprehensive analysis of bike-share usage patterns in Chicago, comparing annual members vs. casual riders to drive data-driven marketing strategies. Google Data Analytics Capstone Project.
 
-**Technologies:** SQL Server, R (tidyverse, ggplot2), RStudio
-**Highlights:** 
-- Analyzed 8+ million ride records across 18 months (Jan 2024 - Jun 2025)
-- Identified key behavioral differences: Members average 12.6 min rides vs. Casuals 25.1 min
-- Discovered seasonal patterns: 45% more rides during summer months
-- Developed targeted marketing recommendations to convert casual users to annual memberships
-- SQL data cleaning and transformation, R for statistical analysis and visualization
+**Technologies:** SQL Server, R (tidyverse, ggplot2), RStudio  
+**Highlights:**  
+- Analyzed 8+ million ride records across 18 months (Jan 2024 - Jun 2025)  
+- Identified key behavioral differences: Members average 12.6 min rides vs. Casuals 25.1 min  
+- Discovered seasonal patterns: 45% more rides during summer months  
+- Developed targeted marketing recommendations to convert casual users to annual memberships  
+- SQL data cleaning and transformation, R for statistical analysis and visualization  
 
 [View Project →](./projects/cyclistic-bike-share-analysis/)
 
-### 2. [Sales Analysis - Glow Studio Nail Salon](./projects/sales-analysis-glow-studio/)
+---
+
+### 2. [Sales Analysis & Business Intelligence – Glow Studio Nail Salon](./projects/sales-analysis-glow-studio/)
 End-to-end business intelligence solution for a nail salon, implementing data-driven strategies that increased profitability by 25% and optimized operations.
 
-**Technologies:** Excel, Power BI, DAX
-**Highlights:** 
-- Automated reporting dashboards for real-time business tracking
-- Customer segmentation using RFM analysis
-- Inventory optimization reducing costs by 20%
-- Marketing campaign ROI improvement of 40%
-- Revenue forecasting and demand prediction
+**Technologies:** Excel, Power BI, DAX  
+**Highlights:**  
+- Automated reporting dashboards for real-time business tracking  
+- Customer segmentation using RFM analysis 
+- Revenue forecasting and demand prediction  
 
 [View Project →](./projects/sales-analysis-glow-studio/)
 
+---
+
 ## 💼 Professional Experience
 
-**Data Analyst & Co-Founder** | Glow Studio (2022-2025)
-- Led data analysis projects for sales optimization and customer behavior insights
-- Developed automated dashboards and reports using Excel and Power BI
-- Implemented data-driven marketing strategies increasing customer retention by 25%
-- Managed inventory optimization based on predictive analytics
+**Administrative Officer** | Municipal Council of Bariloche (2019–2024)  
+- Managed legislative data and documentation processes  
+- Tracked and analyzed legislative committee activities  
+- Developed efficient record management systems using Excel  
 
-**Administrative Officer** | Municipal Council of Bariloche (2019-2024)
-- Managed legislative data and documentation processes
-- Tracked and analyzed legislative committee activities
-- Developed efficient record management systems
+**Intern – Treasury Department** | Municipality of San Carlos de Bariloche (2015–2016)  
+- Assisted with data entry, tax settlements, and customer service at the municipal finance office  
 
-## 📫 Contact
-
-- **Email:** pinosuarezjoaquin@gmail.com
-- **LinkedIn:** [linkedin.com/in/pinosuarezjoaquin](https://linkedin.com/in/pinosuarezjoaquin)
-- **Location:** Berlin, Germany
+---
 
 ## 📄 Education & Certifications
 
-**Education:**
-- **University Market Analyst and Marketing Strategies** - Universidad Siglo 21 (2022-2024)
-- Bachelor's in Marketing - Universidad Siglo 21 (2022-2024)
+**Education:**  
+- **University Market Analyst and Marketing Strategies** – Universidad Siglo 21 (2022–2024)  
+- **Bachelor’s in Marketing** – Universidad Siglo 21 (In Progress)  
 
-**Professional Certifications:**
-- Google Data Analytics Professional Certificate - Google
-- Data Analysis with R Programming - Google/Coursera
-- Power BI Essential - LinkedIn Learning
-- Power BI: Visualizations and Reports - LinkedIn Learning
-- Essential Excel (Office 365/Microsoft 365) - LinkedIn Learning
-- Data Analytics - Coderhouse
-- Statistics for Data Analysis - LinkedIn Learning
-- Basic Principles of Big Data - Fundación Telefónica
-- Python - Kaggle
-- Pandas - Kaggle
-- Intro to Programming - Kaggle
-- Fundamentals of Storytelling - LinkedIn Learning
-- Mailchimp Foundations - Mailchimp
+**Professional Certifications:**  
+- Google Data Analytics Professional Certificate – Google  
+- Data Analysis with R Programming – Google/Coursera  
+- Data Analytics – Coderhouse  
+- Python – Kaggle  
+- Pandas – Kaggle  
+- Power BI Essential – LinkedIn Learning  
+- Power BI: Visualizations and Reports – LinkedIn Learning  
+- Excel Essentials (Office 365/Microsoft 365) – LinkedIn Learning  
+- Statistics for Data Analysis – LinkedIn Learning  
+- Basic Principles of Big Data – Fundación Telefónica  
+- Fundamentals of Storytelling – LinkedIn Learning  
+- Mailchimp Foundations – Mailchimp  
 
-**Languages:**
-- Spanish: Native
-- English: C2 Proficient (EF SET)
-- German: A1
+**Languages:**  
+- Spanish – Native  
+- English – C2 Proficient (EF SET)  
+- German – A1
+
+---
+
+## 📫 Contact
+
+- **Email:** pinosuarezjoaquin@gmail.com  
+- **LinkedIn:** [linkedin.com/in/pinosuarezjoaquin](https://linkedin.com/in/pinosuarezjoaquin)  
+- **Location:** Berlin, Germany  
+
+---
 
 ## 🌟 What Sets Me Apart
 
-- **Business Acumen:** Unique combination of data analysis skills with marketing strategy expertise
-- **Real-World Impact:** Proven track record of implementing data-driven solutions that improve business profitability
-- **Communication:** Strong storytelling abilities to present complex data insights to stakeholders
-- **Entrepreneurial Mindset:** Co-founded and successfully managed a data-driven business
-- **Continuous Learning:** Committed to staying updated with latest tools and methodologies in data analytics
+- **Business Acumen:** Combination of data analysis skills and marketing strategy expertise  
+- **Real-World Impact:** Proven record implementing data-driven solutions improving profitability  
+- **Communication:** Clear storytelling for presenting complex data to stakeholders  
+- **Entrepreneurial Mindset:** Created and managed a data-driven business project  
+- **Continuous Learning:** Always expanding skills and exploring new analytical tools  
+
+---
 
 ## 🎿 Personal Interests
 
-Avid skier and passionate traveler exploring new cultures. In my free time, I enjoy creating dashboards and data visualizations that transform information into compelling stories and actionable insights.
+Avid skier and passionate traveler exploring new cultures. In my free time, I enjoy creating dashboards and visualizations that turn information into stories and insights.
 
 ---
 

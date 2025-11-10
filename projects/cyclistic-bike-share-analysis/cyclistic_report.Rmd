@@ -1,0 +1,185 @@
+---
+title: "Cyclistic Bike-Share Analysis"
+author: "Joaquín Pino Suárez"
+output:
+  html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+# Introduction
+This project is part of the **Google Data Analytics Professional Certificate**. It analyzes user behavior in the **Cyclistic bike-share program** to understand how **annual members** and **casual riders** use bikes differently. The goal is to identify actionable insights to support marketing strategies that encourage casual riders to become members.
+
+# Data Connection
+```{r connection}
+library(DBI)
+library(odbc)
+
+# Connect to the Cyclistic database
+con <- dbConnect(odbc(),
+                 Driver = "SQL Server",
+                 Server = "localhost\\SQLEXPRESS02",
+                 Database = "Cyclistic",
+                 Trusted_Connection = "Yes")
+
+# Load cleaned data from SQL view
+datos <- dbGetQuery(con, "SELECT * FROM viajes_analisis")
+```
+
+# Libraries and Setup
+```{r libraries}
+library(tidyverse)
+library(skimr)
+library(scales)
+library(lubridate)
+library(forcats)
+```
+
+# Data Overview
+```{r overview}
+skim(datos)
+summary(datos)
+```
+
+# General Metrics by User Type
+```{r general_metrics}
+total_viajes <- nrow(datos)
+
+datos %>%
+  group_by(member_casual) %>%
+  summarise(
+    total_rides = n(),
+    percentage = round(100 * total_rides / total_viajes, 1),
+    avg_duration = round(mean(ride_length), 1),
+    median_duration = round(median(ride_length), 1)
+  ) %>%
+  mutate(
+    total_rides = comma(total_rides, big.mark = ".", decimal.mark = ","),
+    percentage = paste0(percentage, "%")
+  )
+```
+
+# Bike Type Frequency by User
+```{r bike_type}
+totales_usuario <- datos %>%
+  group_by(member_casual) %>%
+  summarise(total = n())
+
+datos %>%
+  group_by(rideable_type, member_casual) %>%
+  summarise(rides = n(), .groups = "drop") %>%
+  left_join(totales_usuario, by = "member_casual") %>%
+  mutate(
+    percentage = round(100 * rides / total, 1),
+    rides = comma(rides, big.mark = ".", decimal.mark = ","),
+    percentage = paste0(percentage, "%")
+  ) %>%
+  select(-total) %>%
+  pivot_wider(names_from = member_casual, values_from = c(rides, percentage), names_sep = "_")
+```
+
+# Ride Duration Distribution
+```{r ride_duration}
+limit <- quantile(datos$ride_length, 0.99, na.rm = TRUE)
+
+ggplot(datos %>% filter(ride_length <= limit), 
+       aes(x = ride_length, fill = member_casual)) +
+  geom_histogram(bins = 60, position = "identity", alpha = 0.5) +
+  facet_wrap(~member_casual) +
+  scale_x_continuous(labels = comma, limits = c(0, limit)) +
+  scale_y_continuous(labels = comma) +
+  labs(title = "Distribution of Ride Duration by User Type",
+       x = "Duration (minutes)", y = "Number of Rides") +
+  theme_minimal()
+```
+
+# Rides by Hour of the Day
+```{r rides_hour}
+datos %>%
+  group_by(start_hour, member_casual) %>%
+  summarise(rides = n(), .groups = "drop") %>%
+  ggplot(aes(x = start_hour, y = rides, color = member_casual)) +
+  geom_line(size = 1.2) +
+  scale_y_continuous(labels = comma) +
+  labs(title = "Rides by Hour of the Day", x = "Hour", y = "Number of Rides") +
+  theme_minimal()
+```
+
+# Rides by Day of the Week
+```{r rides_week}
+datos <- datos %>%
+  mutate(day_of_week = factor(day_of_week, levels = c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday")))
+
+datos %>%
+  group_by(day_of_week, member_casual) %>%
+  summarise(rides = n(), .groups = "drop") %>%
+  ggplot(aes(x = day_of_week, y = rides, fill = member_casual)) +
+  geom_col(position = "dodge") +
+  scale_y_continuous(labels = comma) +
+  labs(title = "Rides by Day of the Week", x = "Day", y = "Number of Rides") +
+  theme_minimal()
+```
+
+# Rides by Season
+```{r rides_season}
+datos <- datos %>%
+  mutate(season = factor(season, levels = c("Winter", "Spring", "Summer", "Fall")))
+
+datos %>%
+  group_by(season, member_casual) %>%
+  summarise(rides = n(), .groups = "drop") %>%
+  ggplot(aes(x = season, y = rides, fill = member_casual)) +
+  geom_col(position = "dodge") +
+  scale_y_continuous(labels = comma) +
+  labs(title = "Rides by Season", x = "Season", y = "Number of Rides") +
+  theme_minimal()
+```
+
+# Rides by Month and Year
+```{r rides_month}
+datos <- datos %>%
+  mutate(mes_ano = format(started_at, "%b %Y")) %>%
+  mutate(mes_ano = factor(mes_ano, levels = unique(format(started_at, "%b %Y"))))
+
+datos %>%
+  group_by(mes_ano, member_casual) %>%
+  summarise(rides = n()) %>%
+  ggplot(aes(x = mes_ano, y = rides, fill = member_casual)) +
+  geom_col(position = "dodge") +
+  scale_y_continuous(labels = comma) +
+  labs(title = "Rides by Month and Year", x = "Month-Year", y = "Number of Rides") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1))
+```
+
+# Weekday vs Weekend
+```{r weekday_weekend}
+datos %>%
+  mutate(day_type = ifelse(day_of_week %in% c("Saturday", "Sunday"), "Weekend", "Weekday")) %>%
+  group_by(day_type, member_casual) %>%
+  summarise(rides = n(), .groups = "drop") %>%
+  ggplot(aes(x = day_type, y = rides, fill = member_casual)) +
+  geom_col(position = "dodge") +
+  scale_y_continuous(labels = comma) +
+  labs(title = "Weekday vs Weekend Rides", x = "Day Type", y = "Number of Rides") +
+  theme_minimal()
+```
+
+# Conclusion
+The analysis reveals distinct usage patterns between casual and member riders:
+- Members tend to ride more frequently during weekdays and commuting hours.
+- Casual riders prefer weekends and longer, leisure-oriented trips.
+- Both groups favor electric bikes.
+
+**Marketing Implications:**
+1. Offer seasonal discounts and weekend campaigns for casual users.
+2. Emphasize membership savings for frequent riders.
+3. Promote membership benefits during high-usage summer months.
+
+---
+*Part of the Google Data Analytics Professional Certificate.*
